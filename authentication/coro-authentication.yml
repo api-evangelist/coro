@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.coro.net/developer-portal/authentication.md
+docs: https://docs.coro.net/developer-portal/authentication/
+summary:
+  types: [oauth2]
+  oauth2_flows: [clientCredentials]
+  additional_required_headers: [Workspace]
+schemes:
+- name: OAuth2ClientCredentials
+  type: oauth2
+  flow: clientCredentials
+  token_endpoint: https://api.secure.coro.net/oauth/token
+  token_endpoints_by_region:
+    us: https://api.secure.coro.net/oauth/token
+    ca: https://api.secure-ca.coro.net/oauth/token
+    eu: https://api.secure-eu.coro.net/oauth/token
+  audience: https://secure.coro.net/api
+  grant_type: client_credentials
+  token_type: Bearer
+  token_ttl_seconds: 86400
+  credentials_source: >-
+    Control Panel > Connectors > API Credentials in the Coro console (Client ID +
+    Secret pair, distinct from console login). Up to 10 active credential sets;
+    named, rotatable, and optionally given an expiration date.
+  request_headers:
+  - name: Authorization
+    value: Bearer <access_token>
+  - name: Workspace
+    value: <WORKSPACE_ID>
+  scopes: []
+  scopes_note: >-
+    No granular OAuth scopes are documented; a credential pair grants access scoped
+    to its workspace and the admin role attached to it.
