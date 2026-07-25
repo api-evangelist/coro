@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of Coro API + console hosts
+notes: >-
+  /.well-known/oauth-authorization-server on the API host returns RFC 8414 OAuth
+  server metadata for Coro's MCP OAuth flow. /.well-known/security.txt on
+  secure.coro.net returns the console SPA HTML (not a real RFC 9116 document) so
+  it is NOT captured. The public REST API itself uses OAuth 2.0 client-credentials
+  (see authentication/), separate from the MCP authorization_code flow described here.
+hosts:
+- host: https://api.secure.coro.net
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: coro-oauth-authorization-server.json
+    standard: RFC 8414
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://secure.coro.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    captured: false
+    note: returns console SPA HTML, not a valid RFC 9116 security.txt
+- host: https://www.coro.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 404

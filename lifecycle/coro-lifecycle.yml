@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.coro.net/developer-portal/changelog/
+versioning:
+  scheme: uri-path
+  current: v1
+  release_tracking: semver-dated
+  changelog: changelog/coro-changelog.yml
+  docs: https://docs.coro.net/developer-portal/changelog/
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No formal deprecation/sunset policy is published; the changelog is additive with no breaking changes recorded to date.
+sla:
+  url: null
+status_page:
+  url: null
+  note: No public status page found (status.coro.net did not resolve at probe time).
+deprecated_operations: []

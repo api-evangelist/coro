@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.coro.net/developer-portal/
+authentication:
+  style: oauth2-client-credentials
+  headers: [Authorization (Bearer), Workspace]
+  detail: authentication/coro-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  example: /v1/devices/{enrollmentCode}/license
+  detail: changelog/coro-changelog.yml
+multi_region:
+  style: region-specific-host
+  hosts:
+    us: https://api.secure.coro.net
+    ca: https://api.secure-ca.coro.net
+    eu: https://api.secure-eu.coro.net
+pagination:
+  style: page-with-total
+  response_fields:
+    items: items
+    total: totalElements
+  note: >-
+    Paginated collection responses return an `items` array and a `totalElements`
+    count. Single-resource responses return a JSON object of key-value pairs.
+resource_model:
+  container: workspace
+  workspace_types: [regular, channel, child]
+  scoping_header: Workspace
+  detail: data-model/coro-data-model.yml
+error_envelope:
+  format: json
+  detail: >-
+    Non-200 HTTP status code with a JSON structure describing the error. Not
+    RFC 9457 application/problem+json.
+webhooks:
+  supported: true
+  signing:
+    headers: [X-Coro-Hook-Id, X-Coro-Signature]
+    algorithm: HMAC
+    detail: asyncapi/coro-webhooks.yml
+idempotency:
+  supported: unknown
+  note: No idempotency-key header or retry-safety contract is documented in the developer portal.
+rate_limiting:
+  documented: false
+  note: No request-per-second/minute limits are published in the API credentials or developer docs.

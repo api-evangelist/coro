@@ -1,0 +1,67 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.coro.net/developer-portal/resource-model.md
+container: workspace
+entities:
+- name: workspace
+  uri: /workspaces
+  types: [regular, channel, child]
+  description: Top-level tenant container; all other resources are scoped to a workspace via the Workspace header.
+- name: subscription
+  uri: /subscriptions
+  belongs_to: workspace
+  description: Modules/add-ons enabled for a workspace; supports start/stop and bundle info.
+- name: ticket
+  uri: /tickets
+  belongs_to: workspace
+  description: Protection alerts/issues; supports actions and summary rollups.
+- name: device
+  uri: /devices
+  belongs_to: workspace
+  description: Protected devices managed by a workspace; supports actions and licensing.
+- name: user
+  uri: /users
+  belongs_to: workspace
+  description: Protected users within a workspace.
+- name: portal-user
+  uri: /portal-users
+  belongs_to: workspace
+  description: Admin/portal users for a workspace.
+- name: audit-log
+  uri: /audit-logs/search
+  belongs_to: workspace
+  description: Activity records scoped to a workspace.
+- name: usage
+  uri: /usage
+  belongs_to: workspace
+  description: Module activation and protection metrics per workspace.
+- name: webhook-configuration
+  uri: /webhook-configuration
+  belongs_to: workspace
+  description: Webhook subscriptions tied to workspace events.
+relationships:
+- from: workspace
+  to: subscription
+  kind: has_one
+- from: workspace
+  to: ticket
+  kind: has_many
+- from: workspace
+  to: device
+  kind: has_many
+- from: workspace
+  to: user
+  kind: has_many
+- from: workspace
+  to: portal-user
+  kind: has_many
+- from: workspace
+  to: audit-log
+  kind: has_many
+- from: workspace
+  to: webhook-configuration
+  kind: has_many
+- from: workspace
+  to: workspace
+  kind: has_many
+  via: parent-child (channel workspace creates child workspaces for MSP clients)

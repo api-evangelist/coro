@@ -1,0 +1,80 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.coro.net/developer-portal/changelog.md
+docs: https://docs.coro.net/developer-portal/changelog/
+scheme: semver-dated
+current_version: 3.8.3
+entries:
+- version: 3.8.3
+  date: '2026-04'
+  breaking: false
+  highlights:
+  - Added POST and DELETE device-licensing endpoints (/v1/devices/{enrollmentCode}/license).
+  - /v1/workspaces gains overCapacityAllowance, maxDevicesLimit, invitedByAdminName, invitedByAdminEmail.
+  - Removed maxProtectedUsers minimum constraint.
+  - New audit-log subtypes userProtected, userUnprotected, autoProtectUsers, unlicenseDevice, licenseDevice.
+  - New schema objects AddLicenseResponse and WorkspacePageResponse.
+- version: '3.7'
+  date: '2025-11'
+  breaking: false
+  highlights:
+  - Secure Web Gateway (SWG) module added to subscription endpoints.
+  - Metadata for tickets support in /tickets/{id}/actions.
+- version: 3.6.1
+  date: '2025-09'
+  breaking: false
+  highlights:
+  - New GET /audit-logs/search endpoint with pagination.
+  - Ticket responses include _links for auto-remediation audit records.
+- version: '3.5'
+  date: '2025-04'
+  breaking: false
+  highlights:
+  - Security Awareness Training (SAT) module added to subscription endpoints.
+- version: 3.4.2.1
+  date: '2025-04'
+  breaking: false
+  highlights:
+  - demoModeEnabled/demoModeEndDate added to /usage responses.
+  - workspaceCreationType returned in /workspaces endpoints.
+- version: '3.4'
+  date: '2025-01'
+  breaking: false
+  highlights:
+  - /workspaces/search endpoint for searching child workspaces.
+- version: '3.3'
+  date: '2024-11'
+  breaking: false
+  highlights:
+  - PUT /subscriptions/start and PUT /subscriptions/stop.
+  - Six webhook management endpoints added (create, test, update, retrieve, list, delete).
+- version: '3.2'
+  date: '2024-06'
+  breaking: false
+  highlights:
+  - Three subscription endpoints (GET, PUT, POST bundle info).
+  - PUT /workspaces/archive for archiving inactive workspaces.
+  - pendingAdminEmails in workspace endpoints; role in /portal-users GET.
+- version: 3.1.1
+  date: '2024-03'
+  breaking: false
+  highlights:
+  - role parameter in GET /portal-users/{id} responses.
+- version: '3.1'
+  date: '2024-02'
+  breaking: false
+  highlights:
+  - Multi-region deployment with region-specific API URLs (US, Canada, Germany).
+  - /devices/{enrollmentCode}/actions endpoint.
+  - Three new portal-user management endpoints.
+- version: 3.0.1
+  date: '2023-12'
+  breaking: false
+  highlights:
+  - moduleStatistics object in /usage responses.
+- version: '3.0'
+  date: '2023-10'
+  breaking: false
+  highlights:
+  - New GET /usage endpoint with pagination.
+  - /workspaces responses gain mainAdminEmail, adminEmails, lastAdminLoginTime, workspaceCreationTime.

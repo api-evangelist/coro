@@ -1,7 +1,17 @@
 aid: coro
-name: coro
-description: coro is a company surfaced as a portfolio company of balderton-capital and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+name: Coro
+description: >-
+  Coro is a cybersecurity company that consolidates endpoint protection, email
+  security, network protection (ZTNA, VPN, encryption), cloud app security, data
+  protection, and security awareness training into a single AI-driven platform
+  built for lean IT teams, growing organizations, and managed service providers
+  (MSPs). Coro's public REST API (v1) exposes the same workspace security data
+  through region-specific hosts (US, Canada, Germany), organized around workspaces
+  as tenant containers with subscriptions, tickets, devices, protected users,
+  portal users, usage metrics, audit logs, and webhook configurations. It
+  authenticates with OAuth 2.0 client credentials and offers real-time webhooks
+  and an official MCP server so AI tools can query Coro securely. Coro was surfaced
+  as a portfolio company of Balderton Capital.
 url: https://raw.githubusercontent.com/api-evangelist/coro/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +19,59 @@ x-backed-by:
 - balderton-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.coro.net/wp-content/uploads/coro-opengraph.png
 tags:
 - Company
-apis: []
+- Cybersecurity
+- Security
+- Endpoint Protection
+- Email Security
+- Cloud Security
+- Data Protection
+- MSP
+- Webhooks
+- MCP
+apis:
+- name: Coro Public REST API
+  description: >-
+    Coro's REST API (v1) for managing workspaces, subscriptions, tickets, devices,
+    protected users, portal users, usage, audit logs, and webhooks across the Coro
+    cybersecurity platform. OAuth 2.0 client-credentials authentication with a
+    per-request Workspace header; region-specific hosts for US, Canada, and Germany.
+  humanURL: https://docs.coro.net/developer-portal/
+  baseURL: https://api.secure.coro.net
+  properties:
+  - type: Documentation
+    url: https://docs.coro.net/developer-portal/
+  - type: Authentication
+    url: authentication/coro-authentication.yml
+  - type: ChangeLog
+    url: changelog/coro-changelog.yml
+  - type: Webhooks
+    url: asyncapi/coro-webhooks.yml
+  - type: MCPServer
+    url: mcp/coro-mcp.yml
+  - type: Conventions
+    url: conventions/coro-conventions.yml
+  - type: DataModel
+    url: data-model/coro-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/coro-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +80,54 @@ maintainers:
 common:
 - type: Website
   url: https://www.coro.net/
+- type: DeveloperPortal
+  url: https://docs.coro.net/developer-portal/
+- type: Documentation
+  url: https://docs.coro.net/
+- type: GettingStarted
+  url: https://docs.coro.net/developer-portal/authentication/
+- type: Authentication
+  url: authentication/coro-authentication.yml
+- type: MCPServer
+  url: mcp/coro-mcp.yml
+- type: Webhooks
+  url: asyncapi/coro-webhooks.yml
+- type: ChangeLog
+  url: changelog/coro-changelog.yml
+- type: Lifecycle
+  url: lifecycle/coro-lifecycle.yml
+- type: Conventions
+  url: conventions/coro-conventions.yml
+- type: DataModel
+  url: data-model/coro-data-model.yml
+- type: Conformance
+  url: conformance/coro-conformance.yml
+- type: Compliance
+  url: https://www.coro.net/compliance
+- type: TrustCenter
+  url: security/coro-trust-center.yml
+- type: DomainSecurity
+  url: security/coro-domain-security.yml
+- type: WellKnown
+  url: well-known/coro-well-known.yml
+- type: LLMsTxt
+  url: llms/coro-llms.txt
+- type: Support
+  url: https://docs.coro.net/
+- type: Blog
+  url: https://www.coro.net/blog
+- type: Pricing
+  url: https://www.coro.net/platform/pricing
+- type: SignUp
+  url: https://secure.coro.net/login
+- type: Login
+  url: https://secure.coro.net/login
+- type: TermsOfService
+  url: https://www.coro.net/legal/terms
+- type: PrivacyPolicy
+  url: https://www.coro.net/legal/privacy
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

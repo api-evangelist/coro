@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+source: https://www.coro.net/compliance
+url: https://www.coro.net/compliance
+certifications:
+- SOC 2
+- ISO 27001
+- PCI DSS
+- HIPAA
+- GDPR
+evidence:
+- source: https://www.coro.net/compliance
+  keywords:
+  - soc2
+  - iso 27001
+  - pci dss
+  - pci-dss
+  - hipaa
+  - gdpr

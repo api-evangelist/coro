@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: searched
+type: Webhooks
+source: https://docs.coro.net/admin/webhooks.md
+description: >-
+  Coro delivers real-time webhook notifications for workspace, subscription, user,
+  and device events. Webhooks are configured per workspace (six management endpoints:
+  create, test, update, retrieve, list, delete) via /webhook-configuration.
+security:
+  signing:
+    algorithm: HMAC
+    headers:
+    - name: X-Coro-Hook-Id
+      description: Identifier signed by Coro.
+    - name: X-Coro-Signature
+      description: HMAC hash generated from the Hook-Id and the shared secret key; recipients recompute and compare to verify authenticity.
+management:
+  endpoints: [create, test, update, retrieve, list, delete]
+  uri: /webhook-configuration
+events:
+- id: workspace.created
+  label: Workspace created
+  description: A workspace is created.
+- id: workspace.status_updated
+  label: Workspace status updated
+  description: A workspace subscription status is updated.
+- id: subscription.updated
+  label: Subscription updated
+  description: Modules or add-ons are enabled or disabled.
+- id: protected_users.added
+  label: Protected users added
+  description: Protected users are added to the workspace.
+- id: protected_users.updated
+  label: Protected users updated
+  description: Protected user details are updated.
+- id: protected_users.deleted
+  label: Protected users deleted
+  description: Protected users are deleted from the workspace.
+- id: protected_users.count_updated
+  label: Protected users count updated
+  description: Users are added or deleted.
+- id: protected_devices.added
+  label: Protected devices added
+  description: Protected devices are added to the workspace.
+- id: protected_devices.updated
+  label: Protected devices updated
+  description: Protected device details are updated.
+- id: protected_devices.deleted
+  label: Protected devices deleted
+  description: Protected devices are deleted from the workspace.
+- id: protected_devices.count_updated
+  label: Protected devices count updated
+  description: Devices are added or deleted.

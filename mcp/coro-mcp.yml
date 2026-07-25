@@ -1,0 +1,83 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://docs.coro.net/admin/mcpserver.md
+description: >-
+  Coro publishes an official, hosted MCP (Model Context Protocol) server that acts
+  as a secure intermediary between an organization's AI tools and Coro's workspace
+  security data. The MCP server authenticates and validates each request, translates
+  it into one or more calls to Coro's public REST API, and returns a normalized JSON
+  response. Connections require an existing Coro console account with an admin role
+  (Workspace administrator/super admin or MSP administrator/super admin).
+server:
+  name: coro
+  transport: http
+  regions:
+  - region: us
+    url: https://api.secure.coro.net/mcp
+  - region: ca
+    url: https://api.secure-ca.coro.net/mcp
+  - region: eu
+    url: https://api.secure-eu.coro.net/mcp
+auth:
+  type: oauth2
+  flow: authorization_code
+  metadata: well-known/coro-oauth-authorization-server.json
+  authorization_endpoint: https://secure.coro.net/mcp/oauth/consent
+  token_endpoint: https://api.secure.coro.net/mcp/oauth/token
+  registration_endpoint: https://api.secure.coro.net/mcp/oauth/register
+  code_challenge_methods: [S256]
+  clients: [ChatGPT Apps, Claude Connectors]
+tools:
+- name: list_workspaces
+  category: workspaces
+- name: get_workspace
+  category: workspaces
+- name: create_workspace
+  category: workspaces
+- name: search_workspaces
+  category: workspaces
+- name: get_subscription
+  category: subscriptions
+- name: start_subscription
+  category: subscriptions
+- name: stop_subscription
+  category: subscriptions
+- name: get_bundle_info
+  category: subscriptions
+- name: get_usage
+  category: subscriptions
+- name: list_tickets
+  category: tickets
+- name: get_ticket
+  category: tickets
+- name: get_ticket_actions
+  category: tickets
+- name: perform_ticket_action
+  category: tickets
+- name: list_devices
+  category: devices
+- name: get_device_actions
+  category: devices
+- name: perform_device_action
+  category: devices
+- name: get_latest_agent_versions
+  category: devices
+- name: list_users
+  category: protected-users
+- name: get_user
+  category: protected-users
+- name: add_users
+  category: protected-users
+- name: update_user
+  category: protected-users
+- name: delete_user
+  category: protected-users
+- name: list_portal_users
+  category: portal-users
+- name: get_portal_user
+  category: portal-users
+- name: add_portal_user
+  category: portal-users
+- name: search_audit_logs
+  category: audit
