@@ -1,4 +1,4 @@
-# coro
+# Coro
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-coro is a company surfaced as a portfolio company of balderton-capital and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Coro is a cybersecurity company that consolidates endpoint protection, email security, network protection (ZTNA, VPN, encryption), cloud app security, data protection, and security awareness training into a single AI-driven platform built for lean IT teams, growing organizations, and managed service providers (MSPs). Coro's public REST API (v1) exposes the same workspace security data through region-specific hosts (US, Canada, Germany), organized around workspaces as tenant containers with subscriptions, tickets, devices, protected users, portal users, usage metrics, audit logs, and webhook configurations. It authenticates with OAuth 2.0 client credentials and offers real-time webhooks and an official MCP server so AI tools can query Coro securely. Coro was surfaced as a portfolio company of Balderton Capital.
 
-Backed by: balderton-capital — https://www.coro.net/
+**Areas:** Company · Cybersecurity · Security · Endpoint Security · Email Security · Cloud Security · Data Protection · MSP · Webhook · MCP
+
+## Coro on APIs.io
+
+Everything profiled for Coro is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/coro/](https://apis.io/providers/coro/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Coro Public REST API](https://apis.io/apis/coro/coro-public-rest-api/) — Coro's REST API (v1) for managing workspaces, subscriptions, tickets, devices, protected users, portal users, usage, audit logs, and webhooks across the…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Coro Webhooks](https://apis.io/asyncapis/coro/coro-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [coro](https://apis.io/servers/coro/coro/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Coro Authentication](https://apis.io/security/coro/coro-authentication/)
+- [Coro Domain Security](https://apis.io/security/coro/coro-domain-security/)
+- [Coro Trust Center](https://apis.io/security/coro/coro-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.coro.net/)
+- [Documentation](https://docs.coro.net/)
+- [Getting started](https://docs.coro.net/developer-portal/authentication/)
+- [Pricing](https://www.coro.net/platform/pricing)
+- [Sign up](https://secure.coro.net/login)
+- [Support](https://docs.coro.net/)
+- [Blog](https://www.coro.net/blog)
+- [Compliance](https://www.coro.net/compliance)
+- [Terms of service](https://www.coro.net/legal/terms)
+- [Privacy policy](https://www.coro.net/legal/privacy)
+
+## API Evangelist rating
+
+**Kin Score 44.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 47.4 |
+
+**Agent readiness 44.6** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/coro/](https://apis.io/providers/coro/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Coro: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/coro/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
